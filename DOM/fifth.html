@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title> 
+        coding in summers
+
+    </title>
+</head>
+
+
+<body style = "background-color: grey; color : white;">
+    <ul class = "languages">
+     <li>JavaScript</li>
+     
+    </ul>
+</body>
+<script>
+
+// same as below function(add_opti_lang) but not good approach because we are traversing whole document 
+function addlanguage(langName){
+    const li = document.createElement('li');
+    li.innerHTML = `${langName}`;
+    document.querySelector('.languages').appendChild(li);
+
+}
+
+addlanguage("python");
+addlanguage("typescript");
+
+// same as above function(addlanguage) and good apprach by making a nodelist directly and appending 
+function add_opti_lang(langName){
+
+const li = document.createElement('li');
+//const textadd = document.createTextNode(langName);
+//li.appendChild(textadd);
+li.appendChild(document.createTextNode(langName));
+document.querySelector('.languages').appendChild(li);
+}
+add_opti_lang('golang');
+
+
+// EDIT
+
+const secondlang = document.querySelector("li:nth-child(3)");
+//secondlang.innerHTML = "java";
+const newli = document.createElement('li');
+newli.textContent = "java";
+secondlang.replaceWith(newli);
+
+
+//another appraoch
+const first = document.querySelector("li:first-child");
+first.outerHTML = '<li>Rust</li>'
+
+
+
+// remove
+
+const lastlang = document.querySelector('li:last-child');
+lastlang.remove();
+</script>
+
+
+
+
+
+</html>
