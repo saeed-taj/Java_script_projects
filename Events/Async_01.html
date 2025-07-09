@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html> 
+
+<html>
+<head>
+<title>
+    async 01
+    </title>
+    </head>
+
+<body>
+<h1> coding in summers </h1>
+<button id="stopping"> stop </button>    
+
+
+</body>
+<script> 
+
+const saeed = function(){
+
+    console.log("saeed");
+}
+
+const changeText = function(){
+
+    document.querySelector('h1').innerHTML = "coding with saeed";
+    //console.log(changeText);
+ 
+}
+const changeMe = setTimeout(changeText , 2000);  //2000 is in miliseconds so 2000 == 2 Seconds This will take 2s to display on the screen
+
+
+
+document.querySelector('#stopping').addEventListener('click' , function(){
+
+    clearTimeout(changeMe);
+    console.log("STOPPED");
+})
+
+//changeText(); This will change call the function which will change the coding in summers to coding with saeed
+
+</script>
+
+</html>
