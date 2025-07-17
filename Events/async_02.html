@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html> 
+
+<html>
+<head>
+<title>
+    async 01
+    </title>
+    </head>
+
+<body>
+<h1> coding in summers </h1>
+
+<button id="start"> start </button>
+<button id="stopping"> stop </button>   
+
+
+</body>
+<script>
+
+// approach 01
+setInterval(function(){
+
+    console.log("saeed" , Date.no());
+
+}, 1000)
+
+
+//approach 02   both approach 01 and 02 are same both will gove you the same output
+const sayDate = function(str){
+
+console.log(str , Date.now());
+
+}
+
+const intervalId = setInterval(sayDate , 1000 , "Hi saeed"); // here we can give the parameters also as i gave "Hi saeed"
+
+clearInterval(intervalId);
+
+</script>
+
+</html>
+
