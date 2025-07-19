@@ -1,0 +1,82 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <title> events </title>
+ 
+ <style>
+ .htag{
+    margin-left: 40px;
+ }
+ </style>
+
+</head>
+
+<body>
+    <h2 class="htag">LEARNING EVENTS</h2>
+    <div>
+ <ul id="images">
+
+<li>
+    <img width="300px" id="javascript" src="javascript.jpg" alt="js-picture">
+</li>
+
+<li>
+
+<img width="300px" id="react" src="react.jpg" alt="react">
+    </li>
+
+    <li>
+    <img width="300px" id="node" src="node.jpg" alt="node">
+
+    </li>
+
+<li>
+    <img width="300px" id="git" src="git.jpg" alt="git-github">
+</li>
+
+ </ul>
+
+
+
+
+    </div>
+
+
+</body>
+
+<script>
+
+// document.getElementById('images').addEventListener('click' , function(e){
+//     console.log("clicked inside the ul");
+// })
+
+// document.getElementById('node').addEventListener('click' , function(e){
+//     console.log("node clicked");
+//     e.stopPropagation(); // used to stop propagate from inside of the code means priority will given from the inner
+
+// }, false)  
+
+// document.getElementById('git').addEventListener('click' , function(e){
+    
+//     e.preventDefault();
+//     e.stopPropagation();
+//     console.log("git clicked");
+// }, false)
+
+document.querySelector('#images').addEventListener('click' , function(e){
+
+     console.log(e.target.tagName);
+    if(e.target.tagName === IMG){
+  console.log(e.target.id);
+  let removeIt = e.target.parentNode;
+  removeIt.remove();
+}
+},false)
+
+
+</script>
+</html>
