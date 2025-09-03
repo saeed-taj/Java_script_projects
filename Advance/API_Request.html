@@ -1,0 +1,99 @@
+
+
+
+<!DOCTYPE  html>
+
+<html>
+<head>
+<title> APIs </title>    
+</head>
+
+<body style="background-color: rgb(94, 94, 94);">
+
+1 OPENED open() has been called<br>
+2 HEADERS_RECEIVED   send() has been called, and headers and status are available <br>
+3 LOADING Downloading:  responseText holds partials data.<br>
+4 The operation is complete <br>
+
+<button id="showing"> show </button>
+ 
+</body>
+
+<script>
+
+// const requestUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+
+// const xhr = new XMLHttpRequest();
+
+// xhr.open('GET', requestUrl, true);
+
+// xhr.onreadystatechange = function () {
+   
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+        
+//         console.log("✅ API Response:");
+        
+//         console.log(xhr.responseText);  // this is a string
+//         // Optional: parse to JSON
+        
+//         const data = JSON.parse(xhr.responseText);
+        
+//         console.log("Parsed Data:", data);
+//     }
+// };
+
+// xhr.send();
+
+
+const requestUrl= 'https://api.github.com/users/hiteshchoudhary';
+
+const xhr = new XMLHttpRequest();
+
+xhr.open('GET' , requestUrl);
+
+//onreadystatechange is a property of the XMLHttpRequest (XHR) object in JavaScript.
+//It allows you to set a function that will run every time the request changes its state.
+
+xhr.onreadystatechange = function (){
+
+//When you make an HTTP request (like getting data from a server),
+// it doesn't finish immediately. It goes through 5 steps, called readyState.
+
+//xhr.readyState is a number that tells you what stage your XMLHttpRequest (xhr) is currently in.
+//It helps you track the progress of your HTTP request (like "has it started?" "is it done?").
+
+   console.log(xhr.readyState);
+
+   if(xhr.readyState === 4){
+    
+    const data =  JSON.parse(this.responseText);
+
+    console.log(this.responseText); 
+
+    
+// TASK TO DO THAT when we click on a button it should show the followers
+const save_show = document.querySelector('#showing');
+
+save_show.addEventListener('click' , showPicture);
+
+
+function showPicture(){
+
+console.log(data.followers); 
+
+}
+
+
+
+}
+}
+xhr.send();
+
+
+
+
+
+
+
+</script>
+</html>

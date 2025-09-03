@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<title>binding</title>
+
+</head>
+
+<body> 
+<button> Submit </button>
+    
+</body>
+
+<script>
+class User{
+
+    constructor(){
+
+ 
+        this.library = "react";
+        this.server = "http://127.0.0.1:5500/OOP/bind.html";    
+
+
+    document.querySelector('button').addEventListener('click' , this.handleClick.bind(this));
+ //we use binding 
+}
+
+handleClick(){
+
+    console.log("button clicked!");
+    console.log(this);
+}
+
+}
+
+const result = new User();
+
+    </script>
+
+
+</html>
